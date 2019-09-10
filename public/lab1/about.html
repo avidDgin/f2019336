@@ -6,7 +6,77 @@
     <title>David Gin: Personal Website</title>
 
     <style>
-        @import url("stylesheets/styles.css");
+        /*@import url("stylesheets/styles.css");*/
+
+        body {
+            background-color: black;
+            color: white;
+        }
+
+        header,
+        main,
+        nav,
+        footer {
+            text-align: center;
+        }
+
+        nav a {
+            /*Links within the nav container*/
+            padding: 15px;
+            padding-bottom: 5px;
+            font-size: 1em;
+            text-decoration: none;
+            /*Removes underline*/
+            color: white;
+        }
+
+        nav a:hover {
+            border-bottom: 3px red solid;
+            font-size: 1.5em;
+            transition: .5s;
+            padding-bottom: 10px;
+        }
+
+        main {
+            display: flex;
+            justify-content: center;
+        }
+
+        current {
+            font-size: 2em;
+            font-weight: bold;
+        }
+
+        table {
+            margin: 0px auto;
+        }
+
+        td {
+            padding-right: 10px;
+            font-size: 1.3em;
+        }
+
+        td strong {
+            color: orange;
+        }
+
+        #table-header {
+            background-color: #351a00;
+        }
+
+        .table-row {
+            background-color: #753900;
+        }
+
+        ul {
+            width: 500px;
+            margin: 0px auto;
+            text-align: left;
+        }
+
+        .hobby {
+            color: yellow;
+        }
     </style>
 
 
@@ -20,38 +90,38 @@
     <hr />
     <nav>
         <a href="Lab-1.html">Home</a>
-       <current> <a href="about.html">About</a> </current>
+        <current> <a href="about.html">About</a> </current>
         <a href="contact.html">Contact</a>
     </nav>
 
     <br /> <br />
 
-<div id = "content">
-    
-    <table>
-        <tr id = "table-header">
-            <td><strong>Programming Language</strong></td>
-            <td><strong>Years Experience</strong></td>
-        </tr>
-        <tr class = "table-row">
-            <td>C++</td>
-            <td>About 1</td>
-        </tr>
-        <tr class = "table-row">
-            <td>Assembly</td>
-            <td>1 Semester</td>
-        </tr>
-    </table>
-    <br />
-    <br />
-</div>
+    <div id="content">
 
-<ul>
-<li><span class = "hobby">Video Games</span>: I own a a Nintendo Switch, PS3, PS4, and I also enjoy playing visual novels here and there on my computer.</li>
-<li><span class = "hobby">Anime</span>: I basically watch all day every day.</li>
-<li><span class = "hobby">Eating</span>: Always willing to try new foods that I've never had before.</li>
-    
-</ul>
+        <table>
+            <tr id="table-header">
+                <td><strong>Programming Language</strong></td>
+                <td><strong>Years Experience</strong></td>
+            </tr>
+            <tr class="table-row">
+                <td>C++</td>
+                <td>About 1</td>
+            </tr>
+            <tr class="table-row">
+                <td>Assembly</td>
+                <td>1 Semester</td>
+            </tr>
+        </table>
+        <br />
+        <br />
+    </div>
+
+    <ul>
+        <li><span class="hobby">Video Games</span>: I own a a Nintendo Switch, PS3, PS4, and I also enjoy playing visual novels here and there on my computer.</li>
+        <li><span class="hobby">Anime</span>: I basically watch all day every day.</li>
+        <li><span class="hobby">Eating</span>: Always willing to try new foods that I've never had before.</li>
+
+    </ul>
 
 
     <footer>
