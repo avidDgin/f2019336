@@ -1,0 +1,66 @@
+
+body {
+    background-color: black;
+    color: white;
+}
+
+header, main, nav, footer {
+    text-align: center;
+}
+
+nav a {
+    /*Links within the nav container*/
+    padding: 15px;
+    padding-bottom: 5px;
+    font-size: 1em;
+    text-decoration: none; /*Removes underline*/
+    color: white; 
+}
+
+nav a:hover {
+    border-bottom: 3px red solid;
+    font-size: 1.5em;
+    transition: .5s;
+    padding-bottom: 10px;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+}
+
+current {
+    font-size: 2em;
+    font-weight: bold;
+}
+
+table {
+    margin: 0px auto;
+}
+
+td {
+    padding-right: 10px;
+    font-size: 1.3em;
+}
+
+td strong {
+    color: orange;
+}
+
+#table-header {
+    background-color: #351a00;
+}
+
+.table-row {
+    background-color: #753900;
+}
+
+ul {
+    width: 500px;
+    margin: 0px auto;
+    text-align: left;
+}
+
+.hobby {
+    color: yellow;
+}
