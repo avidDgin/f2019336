@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Scheduler
+        </title>
+        
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="css/styles.css" type="text/css" />
+        <script src="https://code.jquery.com/jquery.min.js"></script>
+        
+    </head>
+    
+    <script>
+            
+            function deleteConfirm(){
+              
+                 if (!confirm("Delete author?")) {
+                      event.preventDefault(); //prevents default behavior of the links
+                    }
+            }
+            $(document).ready(function(){
+        
+            
+            $("a").on("click", function(){
+                //alert("test"); 
+                $.ajax({
+            
+                    method: "GET",
+                    url: "/appointments?=",
+                    dataType: "json",
+                    data: { "id": $(this).attr("id")},
+                    success: function(result,status) {
+                      //alert(result[0].firstName);
+                      $("#date").html(result[0].date);
+                      $("#start").html(result[0].startTime);
+                      $('#duration').html(result[0].duration); 
+                      $('#authorModal').modal("show");
+                    }
+            
+                });//ajax
+            })
+    });
+        </script>
+        
+        
+    </head>
+    <body>
+        <form action="/logout">
+        <button> Logout </button>
+        
+        
+        <h3>Schedule</h3>
+        <button> Add Appointment </button>
+        <table>
+        <tr>
+            <th>Date  </th>
+            <th>Start Time  </th> 
+            <th>Duration  </th>
+            <th>Booked By  </th>
+        </tr>
+        <% scheduleList.forEach( function(scheduleList){ %> 
+            <tr>
+            <th><%= scheduleList.date %></th> <br>
+            <th <%= scheduleList.startTime %>></th>
+            <th><%= scheduleList.duration %></th>
+            <th><%= scheduleList.bookedBy %> </th>
+            <th> <button> DELETE </button></th>
+            </tr>
+        <% })  %>
+
+        </table>
+
+
+<!-- Modal -->
+<!--<div class="modal fade" id="authorModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">-->
+<!--  <div class="modal-dialog" role="document">-->
+<!--    <div class="modal-content">-->
+<!--      <div class="modal-header">-->
+<!--        <h5 class="modal-title" id="exampleModalLabel"><h1 id="authorName"></h1></h5>-->
+<!--        <button type="button" class="close" data-dismiss="modal" aria-label="Close">-->
+<!--          <span aria-hidden="true">&times;</span>-->
+<!--        </button>-->
+<!--      </div>-->
+<!--      <div class="modal-body">-->
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+  Launch demo modal
+</button>
+
+<div class="modal" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Modal title</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Dismiss">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p>Modal body text goes here.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary">Save changes</button>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+        
+         <div>
+            
+            <p id="date">test</p>
+            <p id="start">if</p>
+            <p id="duration">modal works</p>
+            
+            
+        </div>
+        
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+      </div>
+    </div>
+  </div>
+</div>
+        
+    </body>
+</html>
